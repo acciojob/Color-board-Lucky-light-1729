@@ -5,21 +5,17 @@ for (let i = 0; i < SQUARES; i++) {
   const square = document.createElement('div');
   square.classList.add('square');
 
-  square.addEventListener('mouseenter', () => {
-    setColor(square);
-    setTimeout(() => removeColor(square), 1000); // remove after 1s
+  square.addEventListener('mouseover', () => {
+    square.style.backgroundColor = getRandomColor();
+  });
+
+  square.addEventListener('mouseout', () => {
+    setTimeout(() => {
+      square.style.backgroundColor = '#1d1d1d';
+    }, 1000);
   });
 
   container.appendChild(square);
-}
-
-function setColor(element) {
-  const color = getRandomColor();
-  element.style.backgroundColor = color;
-}
-
-function removeColor(element) {
-  element.style.backgroundColor = '#1d1d1d';
 }
 
 function getRandomColor() {
