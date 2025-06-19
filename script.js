@@ -19,7 +19,7 @@ function setColor(element) {
 }
 
 function removeColor(element) {
-  element.style.backgroundColor = 'transparent';
+  element.style.backgroundColor = '#1d1d1d';
 }
 
 function getRandomColor() {
